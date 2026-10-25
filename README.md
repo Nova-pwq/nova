@@ -1,3 +1,12 @@
-<img width="1584" height="396" alt="цц" src="https://github.com/user-attachments/assets/4a94c80d-7814-4839-a730-7285ab2e107d" />
+# Nova — сайт для GitHub Pages
 
-The Nova companies' website, published on GitHub, is one of the official Nova websites. Choose this one, as it is the most frequently updated Nova website.
+Сторінки: `index.html` (головна), `owners.html` (власники), `terms.html` (умови використання), `privacy.html` (конфіденційність).
+
+## Публікація
+1. Створіть репозиторій на GitHub і завантажте всі ці файли в корінь.
+2. Settings → Pages → Source: *Deploy from a branch* → `main` / `(root)`.
+3. Сайт з'явиться за адресою `https://<ваш-логін>.github.io/<репозиторій>/`.
+
+## Що змінити
+- `owners.html` — імена, ролі та посилання власників.
+- Кнопка «Додати на сервер» в `index.html` — вставте invite-посилання бота (`href="#"`).
