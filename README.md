@@ -4,5 +4,8 @@
 
 <img width="1584" height="396" alt="AYR" src="https://github.com/user-attachments/assets/b7ca9af3-ee09-44bf-863d-ed14158da242" />
 
+Overlighter Тарас Стецюк
+
 <img width="1584" height="396" alt="License" src="https://github.com/user-attachments/assets/61604f66-ec3d-488d-b776-2f3b1c7a951c" />
 
+This project is licensed under the MIT License
