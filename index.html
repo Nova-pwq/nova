@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nova</title>
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg" aria-hidden="true">
+  <i style="background-image:url(assets/bg0.jpg)"></i><i style="background-image:url(assets/bg1.jpg)"></i>
+  <i style="background-image:url(assets/bg2.jpg)"></i><i style="background-image:url(assets/bg3.jpg)"></i>
+</div>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<main class="gui">
+  <header class="head">
+    <img src="assets/logo.png" alt="" class="logo">
+    <h1>Nova</h1>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="main" class="on">Основна</button>
+    <button role="tab" data-tab="projects">Проєкти</button>
+    <button role="tab" data-tab="owners">Власники</button>
+    <button role="tab" data-tab="socials">Соцмережі</button>
+  </nav>
+
+  <section class="panel">
+    <div id="main" class="page on">
+      <h2>Ласкаво просимо до Nova</h2>
+      <p class="lead">Тут буде короткий опис вашого проєкту: що це, для кого і чому сюди варто зайти.</p>
+      <div class="ip">
+        <span id="ip">play.nova.example</span>
+        <button class="btn" id="copy">Скопіювати IP</button>
+      </div>
+      <div class="stats">
+        <div class="slot"><b data-count="1280">0</b><small>гравців</small></div>
+        <div class="slot"><b data-count="24">0</b><small>онлайн</small></div>
+        <div class="slot"><b data-count="3">0</b><small>роки</small></div>
+      </div>
+    </div>
+
+    <div id="projects" class="page">
+      <h2>Проєкти</h2>
+      <div class="grid">
+        <article class="card"><div class="slot ico">⛏</div><h3>Проєкт 1</h3><p>Опис першого проєкту.</p></article>
+        <article class="card"><div class="slot ico">⚔</div><h3>Проєкт 2</h3><p>Опис другого проєкту.</p></article>
+        <article class="card"><div class="slot ico">🏰</div><h3>Проєкт 3</h3><p>Опис третього проєкту.</p></article>
+      </div>
+    </div>
+
+    <div id="owners" class="page">
+      <h2>Власники</h2>
+      <div class="grid">
+        <article class="card"><div class="slot"><img src="https://minotar.net/helm/Steve/64" alt=""></div><h3>Нікнейм 1</h3><p>Засновник</p></article>
+        <article class="card"><div class="slot"><img src="https://minotar.net/helm/Alex/64" alt=""></div><h3>Нікнейм 2</h3><p>Співвласник</p></article>
+      </div>
+    </div>
+
+    <div id="socials" class="page">
+      <h2>Соцмережі</h2>
+      <div class="links">
+        <a class="btn wide" href="#" target="_blank" rel="noopener">Discord</a>
+        <a class="btn wide" href="#" target="_blank" rel="noopener">Telegram</a>
+        <a class="btn wide" href="#" target="_blank" rel="noopener">YouTube</a>
+        <a class="btn wide" href="#" target="_blank" rel="noopener">TikTok</a>
+        <a class="btn wide" href="#" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+</main>
+<div class="toast" id="toast">IP скопійовано</div>
+<script src="script.js"></script>
+</body>
+</html>
