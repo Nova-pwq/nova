@@ -1,0 +1,46 @@
+:root{--panel:#292929;--slot:#1a1a1a;--hi:#4a4a4a;--lo:#0d0d0d;--lt:#969696;--txt:#e8e8e8;--acc:#fff}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{font-family:'Pixelify Sans',monospace;color:var(--txt);background:#111;display:grid;place-items:center;padding:16px;overflow-x:hidden;image-rendering:pixelated}
+.bg{position:fixed;inset:0;z-index:-2;overflow:hidden}
+.bg i{position:absolute;inset:-6%;background-size:cover;background-position:center;opacity:0;animation:pan 48s infinite linear}
+.bg i:nth-child(2){animation-delay:12s}.bg i:nth-child(3){animation-delay:24s}.bg i:nth-child(4){animation-delay:36s}
+@keyframes pan{0%{opacity:0;transform:scale(1) translateX(-2%)}6%{opacity:1}25%{opacity:1}31%{opacity:0;transform:scale(1.12) translateX(2%)}100%{opacity:0}}
+.bg::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
+#fx{position:fixed;inset:0;z-index:-1;pointer-events:none;width:100%;height:100%}
+.gui{width:min(760px,100%)}
+.head{display:flex;align-items:center;gap:16px;margin-bottom:12px;animation:drop .8s cubic-bezier(.2,1.4,.4,1) both}
+.logo{width:56px;height:56px}
+h1{font-size:clamp(40px,8vw,64px);letter-spacing:4px;text-shadow:4px 4px 0 #000}
+@keyframes drop{from{transform:translateY(-30px);opacity:0}}
+.tabs{display:flex;gap:4px;padding-left:8px}
+.tabs button{font:inherit;font-size:17px;color:var(--lt);background:var(--slot);border:2px solid var(--lo);border-bottom:0;padding:9px 16px 7px;cursor:pointer;position:relative;top:2px;transition:transform .12s,color .12s}
+.tabs button:hover{color:var(--acc);transform:translateY(-2px)}
+.tabs button.on{background:var(--panel);color:var(--acc);border-color:var(--hi) var(--lo) transparent var(--hi);top:2px;z-index:2;transform:none}
+.panel{background:var(--panel);border:3px solid;border-color:var(--hi) var(--lo) var(--lo) var(--hi);box-shadow:0 0 0 2px #000,0 14px 40px rgba(0,0,0,.6);padding:28px;min-height:340px}
+.page{display:none}
+.page.on{display:block;animation:pop .28s ease-out}
+@keyframes pop{from{opacity:0;transform:scale(.97) translateY(6px)}}
+h2{font-size:28px;margin-bottom:14px}
+h3{font-size:20px;margin:10px 0 2px}
+p{color:#bdbdbd;line-height:1.5}
+.lead{max-width:56ch;margin-bottom:22px}
+.slot{background:var(--slot);border:2px solid;border-color:var(--lo) var(--hi) var(--hi) var(--lo);width:72px;height:72px;display:grid;place-items:center;font-size:30px}
+.slot img{width:48px;height:48px;image-rendering:pixelated}
+.ip{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:24px}
+.ip span{background:var(--slot);border:2px solid;border-color:var(--lo) var(--hi) var(--hi) var(--lo);padding:11px 16px;font-size:20px}
+.btn{font:inherit;font-size:18px;color:#fff;text-decoration:none;text-align:center;cursor:pointer;background:#6b6b6b;border:2px solid;border-color:#a8a8a8 #2b2b2b #2b2b2b #a8a8a8;padding:10px 18px;text-shadow:2px 2px 0 #2b2b2b;transition:transform .1s,background .1s}
+.btn:hover{background:#7d7d7d;transform:translateY(-2px)}
+.btn:active{transform:translateY(1px);border-color:#2b2b2b #a8a8a8 #a8a8a8 #2b2b2b}
+.stats{display:flex;gap:14px;flex-wrap:wrap}
+.stats .slot{width:116px;height:92px;flex-direction:column;align-content:center;text-align:center}
+.stats b{font-size:30px;display:block}.stats small{color:var(--lt);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.card{background:#222;border:2px solid;border-color:var(--lo) var(--hi) var(--hi) var(--lo);padding:16px;transition:transform .15s,border-color .15s}
+.card:hover{transform:translateY(-4px);border-color:var(--lt)}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,80px);background:var(--panel);border:2px solid var(--lt);padding:10px 18px;transition:transform .25s cubic-bezier(.2,1.4,.4,1);z-index:9}
+.toast.show{transform:translate(-50%,0)}
+:focus-visible{outline:2px solid #fff;outline-offset:2px}
+@media(max-width:560px){.tabs{flex-wrap:wrap;padding-left:0}.tabs button{flex:1;padding:9px 6px}.panel{padding:18px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.bg i:first-child{opacity:1}#fx{display:none}}
